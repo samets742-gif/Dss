@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="СППР">
+  <meta name="description" content="Система поддержки принятия решений на основе метода ситуационного управления для IT-проектов">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="style.css">
+
+  <title>СППР — Ситуационное управление</title>
+</head>
+<body>
+<div class="app">
+
+  <!-- ── Шапка ──────────────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-icon">🧠</div>
+    <div class="header-titles">
+      <h1>СППР</h1>
+      <p>Ситуационное управление проектом</p>
+    </div>
+  </header>
+
+  <!-- ── Секция ввода ситуации ──────────────────────────────────────────── -->
+  <div class="section-title">Опишите текущую ситуацию</div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <span class="progress-text" id="progress-text">0 из 6</span>
+  </div>
+
+  <div id="attr-form"></div>
+
+  <div class="btn-wrap">
+    <button class="btn-analyze" id="btn-analyze" disabled>
+      Выберите хотя бы один дескриптор
+    </button>
+  </div>
+
+  <!-- ── Результаты ─────────────────────────────────────────────────────── -->
+  <div id="results"></div>
+
+  <!-- ── О методе ───────────────────────────────────────────────────────── -->
+  <div class="about">
+    <strong>Метод ситуационного управления</strong> (Поспелов Д.А.) — интеллектуальный подход к принятию решений,
+    при котором текущая обстановка описывается набором <em>дескрипторов</em>, а система находит
+    в базе знаний наиболее похожую известную ситуацию и рекомендует соответствующее управляющее воздействие.
+    Степень подобия σ ∈ [0,1] вычисляется взвешенным сравнением значений на порядковых шкалах.
+  </div>
+
+</div>
+
+<!-- ── Toast ──────────────────────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<script src="js/engine.js"></script>
+<script src="js/knowledge-base.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
